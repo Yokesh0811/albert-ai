@@ -60,17 +60,17 @@ const Sidebar = () => {
     return (
         <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
             <div className="px-x py-2 flex-1">
-                <Link href="/dashboard" className="flex items-center pl-3 mb-14">
-                    <div className="relative w-9 h-9 mr-3">
+                <Link href="/dashboard" className="flex items-center pl-3 mb-8">
+                    <div className="relative w-10 h-10 mr-3">
                         <Image fill alt="Logo" src="/ai-saas-logo.png" />
                     </div>
-                    <h1 className="font-bold text-2xl">
+                    <h1 className="font-bold text-3xl">
                         Albert AI
                     </h1>
                 </Link>
-                <div className="space-y-1 ml-2">
+                <div className="space-y-1 mx-4">
                     {routes.map((route) => (
-                        <Link href={route.href} key={route.href} className="text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-md transition">
+                        <Link href={route.href} key={route.href} className="text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-md transition">
                             <div className="flex items-center flex-1">
                                 <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
                                 {route.label}
