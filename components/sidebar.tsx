@@ -4,58 +4,62 @@ import Link from "next/link";
 import Image from "next/image";
 import { LayoutDashboard, MessageSquare, ImageIcon, VideoIcon, CodeIcon, MusicIcon, Settings } from "lucide-react"
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+
+
+const routes = [
+    {
+        label: "Dashboard",
+        href: "/dashboard",
+        icon: LayoutDashboard,
+        color: "text-sky-500",
+        bgColor: "text-sky-500/10"
+    },
+    {
+        label: "Conversation",
+        href: "/conversationPage",
+        icon: MessageSquare,
+        color: "text-violet-500",
+        bgColor: "text-violet-500/10"
+    },
+    {
+        label: "Image Generation",
+        href: "/imagegeneration",
+        icon: ImageIcon,
+        color: "text-pink-500",
+        bgColor: "text-pink-500/10"
+    },
+    {
+        label: "Video Generation",
+        href: "/videogeneration",
+        icon: VideoIcon,
+        color: "text-orange-500",
+        bgColor: "text-orange-500/10"
+    },
+    {
+        label: "Music Generation",
+        href: "/musicgeneration",
+        icon: MusicIcon,
+        color: "text-emerald-500",
+        bgColor: "text-emeral-500/10"
+    },
+    {
+        label: "Code Generation",
+        href: "/codegeneration",
+        icon: CodeIcon,
+        color: "text-green-500",
+        bgColor: "text-green-500/10"
+    },
+    {
+        label: "Settings",
+        href: "/settings",
+        icon: Settings,
+    }
+];
 
 const Sidebar = () => {
 
-    const routes = [
-        {
-            label: "Dashboard",
-            href: "/dashboard",
-            icon: LayoutDashboard,
-            color: "text-sky-500",
-            bgColor: "text-sky-500/10"
-        },
-        {
-            label: "Conversation",
-            href: "/conversationPage",
-            icon: MessageSquare,
-            color: "text-violet-500",
-            bgColor: "text-violet-500/10"
-        },
-        {
-            label: "Image Generation",
-            href: "/imagegeneration",
-            icon: ImageIcon,
-            color: "text-pink-500",
-            bgColor: "text-pink-500/10"
-        },
-        {
-            label: "Video Generation",
-            href: "/videogeneration",
-            icon: VideoIcon,
-            color: "text-orange-500",
-            bgColor: "text-orange-500/10"
-        },
-        {
-            label: "Music Generation",
-            href: "/musicgeneration",
-            icon: MusicIcon,
-            color: "text-emerald-500",
-            bgColor: "text-emeral-500/10"
-        },
-        {
-            label: "Code Generation",
-            href: "/codegeneration",
-            icon: CodeIcon,
-            color: "text-green-500",
-            bgColor: "text-green-500/10"
-        },
-        {
-            label: "Settings",
-            href: "/settings",
-            icon: Settings,
-        }
-    ];
+    const pathname = usePathname();
 
     return (
         <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
@@ -68,9 +72,9 @@ const Sidebar = () => {
                         Albert AI
                     </h1>
                 </Link>
-                <div className="space-y-1 mx-4">
+                <div className="space-y-1 mx-3 w-full">
                     {routes.map((route) => (
-                        <Link href={route.href} key={route.href} className="text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-md transition">
+                        <Link href={route.href} key={route.href} className={cn("text-md group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-md transition", pathname === route.href ? "text-white bg-white/10" : "text-zinc-400")}>
                             <div className="flex items-center flex-1">
                                 <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
                                 {route.label}
