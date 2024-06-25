@@ -62,8 +62,8 @@ const Sidebar = () => {
     const pathname = usePathname();
 
     return (
-        <div className="space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white">
-            <div className="px-x py-2 flex-1">
+        <div className="w-full space-y-4 py-4 flex flex-col h-full text-white">
+            <div className=" px-2 py-2 flex-1">
                 <Link href="/dashboard" className="flex items-center pl-3 mb-8">
                     <div className="relative w-10 h-10 mr-3">
                         <Image fill alt="Logo" src="/ai-saas-logo.png" />
