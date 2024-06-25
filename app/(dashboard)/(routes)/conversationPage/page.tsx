@@ -1,7 +1,10 @@
+import { Heading } from "@/components/heading";
+import { MessageSquare } from "lucide-react"
+
 const conversationPage = () => {
     return (
         <div>
-            Conversation Page
+            <Heading title="Conversation" description="Our Most advanced conversation model" icon={MessageSquare} iconColor="text-violet-500" bgColor="bg-violet-500/10" />
         </div>
     );
 }
