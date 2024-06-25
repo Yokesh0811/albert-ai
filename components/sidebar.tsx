@@ -13,42 +13,36 @@ const routes = [
         href: "/dashboard",
         icon: LayoutDashboard,
         color: "text-sky-500",
-        bgColor: "text-sky-500/10"
     },
     {
         label: "Conversation",
         href: "/conversationPage",
         icon: MessageSquare,
         color: "text-violet-500",
-        bgColor: "text-violet-500/10"
     },
     {
         label: "Image Generation",
         href: "/imagegeneration",
         icon: ImageIcon,
         color: "text-pink-500",
-        bgColor: "text-pink-500/10"
     },
     {
         label: "Video Generation",
         href: "/videogeneration",
         icon: VideoIcon,
         color: "text-orange-500",
-        bgColor: "text-orange-500/10"
     },
     {
         label: "Music Generation",
         href: "/musicgeneration",
         icon: MusicIcon,
         color: "text-emerald-500",
-        bgColor: "text-emeral-500/10"
     },
     {
         label: "Code Generation",
         href: "/codegeneration",
         icon: CodeIcon,
         color: "text-green-500",
-        bgColor: "text-green-500/10"
     },
     {
         label: "Settings",
