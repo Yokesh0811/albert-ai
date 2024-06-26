@@ -10,9 +10,18 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchema } from "./constants"
 import { Form, FormField, FormItem, FormControl } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
+import { useState } from "react";
+
+import axios from "axios";
+
+import { CreateChatCompletionRequestMessage } from "openai/resources";
 
 const conversationPage = () => {
+
+    const router = useRouter();
+    const [messages, setMessages] = useState<CreateChatCompletionRequestMessage[]>([])
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -24,7 +33,20 @@ const conversationPage = () => {
     const isLoading = form.formState.isSubmitting;
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+        try {
+            const userMessage: CreateChatCompletionRequestMessage = {
+                role: "user",
+                content: values.prompt,
+            };
+
+            const newMessages = [...messages]
+        }
+        catch (error) {
+            console.log(error);
+        }
+        finally {
+            router.refresh();
+        }
     };
 
     return (
