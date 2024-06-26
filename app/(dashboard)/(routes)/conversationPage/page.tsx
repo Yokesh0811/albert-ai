@@ -39,7 +39,7 @@ const conversationPage = () => {
                                 render={({ field }) => (
                                     <FormItem className="col-span-12 lg:col-span-10">
                                         <FormControl>
-                                            <Input placeholder="write your prompt" disabled={isLoading} {...field} />
+                                            <Input placeholder="Write your prompt" disabled={isLoading} {...field} />
                                         </FormControl>
                                     </FormItem>
                                 )} />
